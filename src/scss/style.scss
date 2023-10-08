@@ -1,0 +1,80 @@
+// If you want to override variables do it here
+@import "variables";
+
+$enable-ltr: true;
+$enable-rtl: true;
+
+// Import CoreUI for React components library
+@import "@coreui/coreui/scss/coreui";
+
+// Import Chart.js custom tooltips styles
+@import "@coreui/chartjs/scss/coreui-chartjs";
+
+@import "layout";
+@import "example";
+
+// If you want to add custom CSS you can put it here.
+@import "custom";
+
+
+
+
+// /******* manish css start********** /
+
+.tfder {
+    background-color: yellow;
+    font-size: 20px;
+}
+
+html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) {
+    /* margin-left: calc(-1 * var(--cui-sidebar-width)); */
+    width: 60px !important;
+}
+
+html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) .nav-title {
+    display: none;
+}
+
+.sidebar {
+    margin-left: 0px !important;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    // width: calc(100% - 250px);
+    padding-left: 250px;
+}
+
+// html:not([dir=rtl]) .wrapper {
+//     width: calc(100% - 70px);
+//     padding-left: 70px;
+// }
+
+.sidebar.hide:not(.sidebar-end)~* {
+    /* --cui-sidebar-occupy-start: 70px; */
+    // width: calc(100% - 70px) !important;
+    padding-left: 60px !important;
+}
+
+html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) .mini-logo {
+    display: block;
+}
+
+html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) .logo {
+    display: none;
+}
+
+
+
+.mini-logo {
+    display: none;
+}
+
+.logo {
+    width: 70%;
+}
+
+// /******* manish css start********** /
