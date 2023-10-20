@@ -21,14 +21,36 @@ $enable-rtl: true;
 
 // /******* manish css start********** /
 
+// scroll bar
+
+body::-webkit-scrollbar {
+    width: 6px;
+    /* Scroll bar ki width */
+    background-color: #3c4b64;
+    /* Scroll bar ka background color */
+}
+
+/* Scroll thumb (yani ki actual scroll bar handle) */
+body::-webkit-scrollbar-thumb {
+    background-color: #777889;
+    /* Scroll bar handle ka color */
+}
+
+/* Scroll track (scroll bar ka background) */
+body::-webkit-scrollbar-track {
+    background-color: lightgray;
+    /* Scroll bar ke background ka color */
+}
+
+// *** for aside baar  ********
+
 .tfder {
     background-color: yellow;
     font-size: 20px;
 }
 
 html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) {
-    /* margin-left: calc(-1 * var(--cui-sidebar-width)); */
-    width: 60px !important;
+    width: 57px !important;
 }
 
 html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) .nav-title {
@@ -44,18 +66,10 @@ html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) .nav-title {
 }
 
 .wrapper {
-    // width: calc(100% - 250px);
     padding-left: 250px;
 }
 
-// html:not([dir=rtl]) .wrapper {
-//     width: calc(100% - 70px);
-//     padding-left: 70px;
-// }
-
 .sidebar.hide:not(.sidebar-end)~* {
-    /* --cui-sidebar-occupy-start: 70px; */
-    // width: calc(100% - 70px) !important;
     padding-left: 60px !important;
 }
 
@@ -77,4 +91,40 @@ html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) .logo {
     width: 70%;
 }
 
-// /******* manish css start********** /
+
+
+
+@media (max-width:767px) {
+    html:not([dir=rtl]) .sidebar.sidebar-fixed:not(.sidebar-end) {
+        left: 0;
+    }
+
+    html:not([dir=rtl]) .wrapper {
+        padding-left: var(--cui-sidebar-occupy-start, 0);
+    }
+
+    .sidebar:not(.sidebar-end)~* {
+        --cui-sidebar-occupy-start: 16rem;
+    }
+
+    html:not([dir=rtl]) .sidebar.hide:not(.sidebar-end) {
+        /* margin-left: calc(-1 * var(--cui-sidebar-width)); */
+        width: 60px !important;
+    }
+
+    .sidebar.hide:not(.sidebar-end)~* {
+        /* --cui-sidebar-occupy-start: 70px; */
+        padding-left: 60px !important;
+    }
+
+}
+
+@media (max-width:500px) {
+    html:not([dir=rtl]) .sidebar:not(.sidebar-end):not(.show) {
+        width: 0% !important;
+    }
+
+    .sidebar-brand {
+        display: flex !important;
+    }
+}
